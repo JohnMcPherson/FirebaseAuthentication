@@ -14,7 +14,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView signUpButton = findViewById(R.id.imageView2);
-        signUpButton.setImageResource(androidx.appcompat.R.drawable.abc_ic_ab_back_material);
     }
 }
