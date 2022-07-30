@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -18,7 +17,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        back_arrow = findViewById(R.id.back_arrow);
+        back_arrow = findViewById(R.id.back_arrow3);
 
         back_arrow.setOnClickListener(view -> {
             finish();

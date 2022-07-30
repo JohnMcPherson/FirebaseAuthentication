@@ -13,7 +13,7 @@ public class UpdateEmailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityUpdateEmailBinding binding = ActivityUpdateEmailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.backArrow.setOnClickListener(view -> {
+        binding.backArrow2.setOnClickListener(view -> {
             finish();
         });
     }
