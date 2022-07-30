@@ -19,5 +19,10 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(this, UpdateEmailActivity.class);
             startActivity(intent);
         });
+
+        binding.updatePasswordBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, UpdatePasswordActivity.class);
+            startActivity(intent);
+        });
     }
 }

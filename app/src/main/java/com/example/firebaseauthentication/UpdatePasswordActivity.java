@@ -16,9 +16,8 @@ public class UpdatePasswordActivity extends AppCompatActivity {
         ActivityUpdatePasswordBinding binding = ActivityUpdatePasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.updatePassword.setOnClickListener(view -> {
-            Intent intent = new Intent(this, UpdateEmailActivity.class);
-            startActivity(intent);
+        binding.backArrow3.setOnClickListener(view -> {
+            finish();
         });
     }
 }

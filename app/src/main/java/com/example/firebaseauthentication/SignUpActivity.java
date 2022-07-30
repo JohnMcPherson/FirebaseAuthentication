@@ -7,19 +7,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-public class SignUpActivity extends AppCompatActivity {
+import com.example.firebaseauthentication.databinding.ActivityMainBinding;
+import com.example.firebaseauthentication.databinding.ActivitySignUpBinding;
 
-    ImageView back_arrow;
+public class SignUpActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        ActivitySignUpBinding binding = ActivitySignUpBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        back_arrow = findViewById(R.id.back_arrow3);
-
-        back_arrow.setOnClickListener(view -> {
+        binding.backArrow3.setOnClickListener(view -> {
             finish();
         });
     }
