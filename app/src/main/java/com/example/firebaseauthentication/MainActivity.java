@@ -13,11 +13,19 @@ import com.example.firebaseauthentication.databinding.ActivityUpdatePasswordBind
 
 public class MainActivity extends AppCompatActivity {
 
+    ValidateInput validateInput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        validateInput = new ValidateInput(
+                this,
+                binding.signInEmail,
+                binding.signInPassword);
+
+
 
         binding.createAccountTxt.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
@@ -26,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.signInButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            startActivity(intent);
+            boolean emailVerified = validateInput.validateEmail();
+            boolean passwordVerified = validateInput.validatePassword();
+
+            if (emailVerified && passwordVerified) {
+
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }
