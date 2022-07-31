@@ -71,6 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(SignUpActivity.this, "Fatal error", Toast.LENGTH_SHORT).show();
                         }
