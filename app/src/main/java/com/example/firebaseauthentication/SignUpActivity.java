@@ -28,6 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     ActivitySignUpBinding binding;
     AlertDialog.Builder builder;
 
+    AlertDialog dialog;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +76,11 @@ public class SignUpActivity extends AppCompatActivity {
                             finish();
                         } else {
                             Toast.makeText(SignUpActivity.this, "Fatal error", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
                         }
                     });
+        } else {
+            dialog.dismiss();
         }
     }
 
@@ -84,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
         builder.setView(inflater.inflate(R.layout.loading, null));
         builder.setCancelable(false);
 
-        AlertDialog dialog = builder.create();
+        dialog = builder.create();
         dialog.show();
     }
 }

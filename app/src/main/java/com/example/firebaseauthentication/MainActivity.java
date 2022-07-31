@@ -71,12 +71,13 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
-                            dialog.dismiss();
                         } else {
                             Toast.makeText(MainActivity.this, "Fatal Error", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
                     });
+        } else {
+            dialog.dismiss();
         }
     }
 
